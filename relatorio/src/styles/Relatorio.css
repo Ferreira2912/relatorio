@@ -1,0 +1,61 @@
+.relatorio-page {
+  opacity: 0;
+  animation: pageLoad 0.6s ease forwards;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.report-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.report-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, #0057b8, #4a86e8, #0057b8);
+  border-radius: 2px;
+}
+
+.page-title {
+  margin-bottom: 2.5rem;
+}
+
+.report-paragraph {
+  margin-bottom: 1.5rem;
+  color: #444;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.5s ease, color 0.3s ease, transform 0.4s ease;
+}
+
+.report-paragraph.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.report-paragraph:hover {
+  color: #000;
+}
+
+.report-paragraph:last-child {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e6f0ff;
+}
